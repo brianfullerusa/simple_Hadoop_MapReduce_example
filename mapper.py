@@ -14,8 +14,7 @@ for line in sys.stdin:
     line = line.lower()
 
     # remove punctuation
-    #exclude = set(string.punctuation)
-    #line = ''.join(ch for ch in line if ch not in exclude)
+    line = line.translate(None, string.punctuation) 
 
     # split the line into words; splits on any whitespace
     words = line.split()
