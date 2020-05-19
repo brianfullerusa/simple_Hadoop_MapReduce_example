@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 import sys
+from sklearn.feature_extraction import stop_words
+
+
 
 # get all lines from stdin
 for line in sys.stdin:
@@ -13,8 +16,8 @@ for line in sys.stdin:
     words = line.split()
 
     # set stopwords
-    stopwords = set(['the', 'and'])
-
+    # stopwords = set(['the', 'and'])
+    stopwords = set(stop_words.ENGLISH_STOP_WORDS)
 
     # output tuples (word, 1) in tab-delimited format
     for word in words:
