@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import sys
+import string
 from sklearn.feature_extraction import stop_words
 
 
@@ -11,6 +12,10 @@ for line in sys.stdin:
 
     # make the text lower case
     line = line.lower()
+
+    # remove punctuation
+    #exclude = set(string.punctuation)
+    #line = ''.join(ch for ch in line if ch not in exclude)
 
     # split the line into words; splits on any whitespace
     words = line.split()
